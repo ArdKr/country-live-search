@@ -16,6 +16,33 @@ const Card = () => {
     setCountryList(countryListArray);
   }, []);
 
+  // Function that searches the list & returns results
+  const search = () => {
+    // Only perform a search if search input contains 2 or more chars
+    if (searchInput.length > 1) {
+      const filteredCountries = countryList.filter((country) => {
+        const countryName = country.toLowerCase();
+        const searchCountryName = searchInput.toLowerCase();
+
+        return countryName.includes(searchCountryName);
+      });
+
+      // If results array wasn't empty, render it
+      if (filteredCountries.length !== 0) {
+        setSearchResult(filteredCountries);
+        return;
+      }
+    }
+
+    // if search input is empty or the results didn't brind anything, set searchResult to an empty array
+    setSearchResult([]);
+  };
+
+  // Search everytime searchInput state changes
+  useEffect(() => {
+    search();
+  }, [searchInput]);
+
   return (
     <div className="border shadow mt-20 p-5 w-96 rounded relative">
       {/* Heading */}
