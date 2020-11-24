@@ -1,7 +1,12 @@
 import React from "react";
+import Card from "./components/Card";
 
 const App = () => {
-  return <div className="bg-gray-50 h-screen w-screen">To be updated</div>;
+  return (
+    <div className="justify-center flex">
+      <Card />
+    </div>
+  );
 };
 
 export default App;

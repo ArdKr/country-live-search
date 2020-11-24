@@ -1,5 +1,4 @@
-export default `
-Afghanistan
+export default `Afghanistan
 Albania
 Algeria
 Andorra
