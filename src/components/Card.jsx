@@ -8,7 +8,7 @@ import countryListArray from "../Countries";
 
 const Card = () => {
   const [searchInput, setSearchInput] = useState("");
-  const [countryList, setCountryList] = useState(countryListArray);
+  const [countryList] = useState(countryListArray);
   const [searchResult, setSearchResult] = useState([]);
 
   // Search everytime searchInput state changes
